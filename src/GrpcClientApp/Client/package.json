@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A simple gRPC-web sample",
   "scripts": {
+    "protoc": "protoc -I=. hello.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.",
     "build": "webpack --output-path ../wwwroot/dist client.js"
   },
   "dependencies": {
