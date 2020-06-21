@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gRPC-web Sample</title>
+</head>
+
+<body>
+  <p>
+    <span>Say hello to: </span><input id="helloTo" type="text" /><input id="sayHelloButton" type="button"
+      value="Say Hello" />
+  </p>
+  <p>
+    <span id="greeting"></span>
+  </p>
+  <script src="dist/main.js"></script>
+  <script type="text/javascript">
+    document
+      .getElementById('sayHelloButton')
+      .addEventListener('click', () => {
+        sayHello(
+          document.getElementById('helloTo').value,
+          response => {
+            document.getElementById('greeting').textContent = response;
+          });
+      });
+  </script>
+</body>
+
+</html>
